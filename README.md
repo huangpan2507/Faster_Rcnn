@@ -22,3 +22,12 @@ Installation and demo
  4.Download the trained model VGGnet_fast_rcnn_iter_70000.h5 and set the model path in demo.py
 
  5.Run demo python demo.py
+ 
+ 
+ 在进行到底3步时， 直接 ./make.sh报错File "build.py", line 2, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'    然后我  sudo chmod +x ./make.sh  sudo  sh ./make.sh
+ 接着报错， 看一下，报错里面用的还是 python 2.版本，  然后修改  setup.py文件，  讲里面所有的 python XXX 中的python改成  python3 xxx
+ 然后运行， 接着报错  File "/usr/lib/python3.6/distutils/cmd.py", line 57, in __init__
+    raise TypeError("dist must be a Distribution instance")
+TypeError: dist must be a Distribution instance
